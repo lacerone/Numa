@@ -3,6 +3,39 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'prod-files-secure.s3.us-west-2.amazonaws.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.amazonaws.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.notion.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.notionusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.unsplash.com', // Se usi immagini da Unsplash
+      },
+      {
+        protocol: 'https',
+        hostname: '**.gravatar.com', // Per eventuali avatar
+      },
+      {
+        protocol: 'https',
+        hostname: 's3.us-west-2.amazonaws.com', // A volte Notion usa bucket specifici
+      },
+    ],
+  },
 };
 
 export default nextConfig;
