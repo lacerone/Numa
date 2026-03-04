@@ -16,6 +16,9 @@ const sans = Inter({
 export const metadata = {
   title: 'Numa',
   description: 'Articoli come Lucy',
+  icons: {
+    icon: '/logo.png', // oppure '/favicon.ico'
+  },
 };
 
 export default function RootLayout({
