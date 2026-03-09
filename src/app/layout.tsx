@@ -17,7 +17,7 @@ export const metadata = {
   title: 'Numa',
   description: 'Articoli come Lucy',
   icons: {
-    icon: '/logo.png', // oppure '/favicon.ico'
+    icon: '/logo.png', // manteniamo anche questa per sicurezza
   },
 };
 
@@ -28,6 +28,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="it" className={`${serif.variable} ${sans.variable}`}>
+      <head>
+        <link rel="icon" href="/logo.png" type="image/png" />
+      </head>
       <body className="font-sans antialiased">
         <Header />
         <main>{children}</main>
